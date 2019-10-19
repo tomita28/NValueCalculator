@@ -25,10 +25,16 @@ class Config: ObservableObject {
     
     
     var leftWallValue: NSDecimalNumber {
-        return selectedLeftWallTypes == 0 ? 1.5 : 0.0
+        return selectedLeftWallTypes == 1 ?
+            0.0 :
+            withLeftPedestalDiagonal ? withLeftCapitalDiagonal ?
+            3.0 : 1.5 : 0
     }
     var rightWallValue: NSDecimalNumber {
-        return selectedRightWallTypes == 0 ? 1.5 : 0.0
+        return selectedRightWallTypes == 1 ?
+        0.0 :
+        withRightPedestalDiagonal ? withRightCapitalDiagonal ?
+        3.0 : 1.5 : 0
     }
     var complement: NSDecimalNumber {
         // 左筋交い無し
@@ -177,42 +183,44 @@ struct MainView: View {
                     Toggle(isOn: $config.isCorner) {
                         Text("出隅")
                     }
-                    
+                }
+                
+                Section(header: Text("左壁の設定")){
                     Picker(
                         selection: $config.selectedLeftWallTypes,
-                        label: Text("左壁のタイプ")
+                        label: Text("壁/窓")
                     ) {
                         ForEach(0 ..< Config.wallTypes.count) {
                             Text(Config.wallTypes[$0])
                        }
                     }
                     .scaledToFill()
-                    
+                    Toggle(isOn: $config.withLeftCapitalDiagonal) {
+                        Text("筋交い 柱頭")
+                    }
+                    Toggle(isOn: $config.withLeftPedestalDiagonal) {
+                        Text("筋交い 柱脚")
+                    }
+                }
+                
+                Section(header: Text("右壁の設定")){
                     Picker(
                         selection: $config.selectedRightWallTypes,
-                        label: Text("右壁のタイプ")
+                        label: Text("壁/窓")
                     ) {
                         ForEach(0 ..< Config.wallTypes.count) {
                             Text(Config.wallTypes[$0])
                        }
                     }.scaledToFill()
-                   
-                    
-                    Toggle(isOn: $config.withLeftCapitalDiagonal) {
-                        Text("左柱頭筋交い")
-                    }
-                    Toggle(isOn: $config.withLeftPedestalDiagonal) {
-                        Text("左柱脚筋交い")
-                    }
                     Toggle(isOn: $config.withRightCapitalDiagonal) {
-                        Text("右柱頭筋交い")
+                        Text("筋交い 柱頭")
                     }
                     Toggle(isOn: $config.withRightPedestalDiagonal) {
-                        Text("右柱脚筋交い")
+                        Text("筋交い 柱脚")
                     }
                 }
                 
-                Section{
+                Section(header: Text("計算結果")){
                     List{
                         Text("(| \(config.leftWallValue.description) - \(config.rightWallValue.description) | +  (\(config.complement.description) )) × \(config.B1.description) - \(config.L.description) = \(config.nValue.description)"
                         )
