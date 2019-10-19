@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7548732235976C1006BB0F3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7548731235976C1006BB0F3 /* MainView.swift */; };
 		D75D182D2357E38A00534B13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D182C2357E38A00534B13 /* AppDelegate.swift */; };
 		D75D182F2357E38A00534B13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D182E2357E38A00534B13 /* SceneDelegate.swift */; };
 		D75D18312357E38A00534B13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D18302357E38A00534B13 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D7548731235976C1006BB0F3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D75D18292357E38A00534B13 /* NValueCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NValueCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75D182C2357E38A00534B13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75D182E2357E38A00534B13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				D75D182C2357E38A00534B13 /* AppDelegate.swift */,
 				D75D182E2357E38A00534B13 /* SceneDelegate.swift */,
 				D75D18302357E38A00534B13 /* ContentView.swift */,
+				D7548731235976C1006BB0F3 /* MainView.swift */,
 				D75D18322357E38E00534B13 /* Assets.xcassets */,
 				D75D18372357E38E00534B13 /* LaunchScreen.storyboard */,
 				D75D183A2357E38E00534B13 /* Info.plist */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75D182D2357E38A00534B13 /* AppDelegate.swift in Sources */,
+				D7548732235976C1006BB0F3 /* MainView.swift in Sources */,
 				D75D182F2357E38A00534B13 /* SceneDelegate.swift in Sources */,
 				D75D18312357E38A00534B13 /* ContentView.swift in Sources */,
 			);
