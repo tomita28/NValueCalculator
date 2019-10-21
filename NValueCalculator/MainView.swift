@@ -25,16 +25,16 @@ class Config: ObservableObject {
     
     
     var leftWallValue: NSDecimalNumber {
-        return selectedLeftWallTypes == 1 ?
-            0.0 :
-            withLeftPedestalDiagonal ? withLeftCapitalDiagonal ?
-            3.0 : 1.5 : 0
+        return selectedLeftWallTypes == 1 ? 0.0
+            : withLeftPedestalDiagonal && withLeftCapitalDiagonal ? 3.0
+            : withLeftPedestalDiagonal || withLeftCapitalDiagonal ? 1.5
+            : 0
     }
     var rightWallValue: NSDecimalNumber {
-        return selectedRightWallTypes == 1 ?
-        0.0 :
-        withRightPedestalDiagonal ? withRightCapitalDiagonal ?
-        3.0 : 1.5 : 0
+        return selectedRightWallTypes == 1 ? 0.0
+        : withRightPedestalDiagonal && withRightCapitalDiagonal ? 3.0
+        : withRightPedestalDiagonal || withRightCapitalDiagonal ? 1.5
+        : 0
     }
     var complement: NSDecimalNumber {
         // 左筋交い無し
