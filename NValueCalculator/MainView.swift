@@ -141,6 +141,10 @@ class Config: ObservableObject {
         return jointLevelForNeed.map({labels[$0]}) ?? "エラー"
     }
     var jointLevelForNotification1460: Int {
+        if ( withRightPedestalDiagonal && withRightCapitalDiagonal
+            || withLeftPedestalDiagonal && withLeftCapitalDiagonal ) {
+            return isCorner ? 6 : 2
+        }
         let withPedestal = withLeftPedestalDiagonal || withRightPedestalDiagonal
         return isCorner
             ? withPedestal ? 1 : 3
