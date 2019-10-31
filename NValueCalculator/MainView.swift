@@ -89,7 +89,7 @@ class Config: ObservableObject {
                 return -0.5
             }
         }
-        //左無し
+        //左たすき
         else{
             if withRightCapitalDiagonal{
                 if withRightPedestalDiagonal{
@@ -101,7 +101,7 @@ class Config: ObservableObject {
                 }
             }else if withRightPedestalDiagonal{
                 //右柱脚
-                return -0.5
+                return 0.0
             }else{
                 //右無し
                 return 0.0
